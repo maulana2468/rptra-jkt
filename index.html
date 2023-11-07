@@ -1,87 +1,95 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="css/leaflet.css">
-        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
-        <link rel="stylesheet" href="css/MarkerCluster.css">
-        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
-        <link rel="stylesheet" href="css/leaflet-search.css">
-        <link rel="stylesheet" href="css/filter.css">
-<link rel="stylesheet" href="css/nouislider.min.css">
-        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
-        <link rel="stylesheet" href="css/leaflet-measure.css">
-        <style>
-        html, body, #map {
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/qgis2web.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/MarkerCluster.css">
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="css/leaflet-search.css">
+    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+    <link rel="stylesheet" href="css/leaflet-measure.css">
+    <link rel="icon" href="tree.png" type="image/x-icon">
+    <style>
+        html,
+        body,
+        #map {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
         }
-        </style>
-        <title></title>
-    </head>
-    <body>
-        <div id="map">
-        </div>
-        <script src="js/qgis2web_expressions.js"></script>
-        <script src="js/leaflet.js"></script>
-        <script src="js/leaflet.rotatedMarker.js"></script>
-        <script src="js/leaflet.pattern.js"></script>
-        <script src="js/leaflet-hash.js"></script>
-        <script src="js/Autolinker.min.js"></script>
-        <script src="js/rbush.min.js"></script>
-        <script src="js/labelgun.min.js"></script>
-        <script src="js/labels.js"></script>
-        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
-        <script src="js/leaflet-measure.js"></script>
-        <script src="js/leaflet.markercluster.js"></script>
-        <script src="js/leaflet-search.js"></script>
-        <script src="js/tailDT.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/wNumb.js"></script>
-        <script src="data/JakartaBarat_1.js"></script>
-        <script src="data/JakartaPusat_2.js"></script>
-        <script src="data/JakartaSelatan_3.js"></script>
-        <script src="data/JakartaTimur_4.js"></script>
-        <script src="data/JakartaUtara_5.js"></script>
-        <script src="data/KepSeribu_6.js"></script>
-        <script src="data/JalanJakartaBarat_7.js"></script>
-        <script src="data/JalanJakartaPusat_8.js"></script>
-        <script src="data/JalanJakartaSelatan_9.js"></script>
-        <script src="data/JalanJakartaTimur_10.js"></script>
-        <script src="data/JalanJakartaUtara_11.js"></script>
-        <script src="data/JalanKepSeribu_12.js"></script>
-        <script src="data/JalanTol_13.js"></script>
-        <script src="data/KRLLine_14.js"></script>
-        <script src="data/RPTRA_15.js"></script>
-        <script>
+    </style>
+    <title>
+        RPTRA Jakarta
+    </title>
+</head>
+
+<body>
+    <div id="map">
+    </div>
+    <script src="js/qgis2web_expressions.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/leaflet.rotatedMarker.js"></script>
+    <script src="js/leaflet.pattern.js"></script>
+    <script src="js/leaflet-hash.js"></script>
+    <script src="js/Autolinker.min.js"></script>
+    <script src="js/rbush.min.js"></script>
+    <script src="js/labelgun.min.js"></script>
+    <script src="js/labels.js"></script>
+    <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+    <script src="js/leaflet-measure.js"></script>
+    <script src="js/leaflet.markercluster.js"></script>
+    <script src="js/leaflet-search.js"></script>
+    <script src="js/tailDT.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/wNumb.js"></script>
+    <script src="data/JakartaBarat_1.js"></script>
+    <script src="data/JakartaPusat_2.js"></script>
+    <script src="data/JakartaSelatan_3.js"></script>
+    <script src="data/JakartaTimur_4.js"></script>
+    <script src="data/JakartaUtara_5.js"></script>
+    <script src="data/KepSeribu_6.js"></script>
+    <script src="data/JalanJakartaBarat_7.js"></script>
+    <script src="data/JalanJakartaPusat_8.js"></script>
+    <script src="data/JalanJakartaSelatan_9.js"></script>
+    <script src="data/JalanJakartaTimur_10.js"></script>
+    <script src="data/JalanJakartaUtara_11.js"></script>
+    <script src="data/JalanKepSeribu_12.js"></script>
+    <script src="data/JalanTol_13.js"></script>
+    <script src="data/KRLLine_14.js"></script>
+    <script src="data/RPTRA_15.js"></script>
+    <script>
         var highlightLayer;
         function highlightFeature(e) {
             highlightLayer = e.target;
 
             if (e.target.feature.geometry.type === 'LineString') {
-              highlightLayer.setStyle({
-                color: '#ffff00',
-              });
+                highlightLayer.setStyle({
+                    color: '#ffff00',
+                });
             } else {
-              highlightLayer.setStyle({
-                fillColor: '#ffff00',
-                fillOpacity: 1
-              });
+                highlightLayer.setStyle({
+                    fillColor: '#ffff00',
+                    fillOpacity: 1
+                });
             }
             highlightLayer.openPopup();
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.9738218055411,105.77378334220778],[-5.496885371439968,107.75557960685622]]);
+            zoomControl: true, maxZoom: 28, minZoom: 1
+        }).fitBounds([[-6.9738218055411, 105.77378334220778], [-5.496885371439968, 107.75557960685622]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
-        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var autolinker = new Autolinker({ truncate: { length: 30, location: 'smart' } });
         var measureControl = new L.Control.Measure({
             position: 'topleft',
             primaryLengthUnit: 'meters',
@@ -91,9 +99,9 @@
         });
         measureControl.addTo(map);
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .innerHTML = '';
+            .innerHTML = '';
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
-        .className += ' fas fa-ruler';
+            .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
@@ -111,14 +119,14 @@
         layer_TransportMaps_0;
         function pop_JakartaBarat_1(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -139,7 +147,7 @@
                         <td>' + (feature.properties['Luas (km2)'] !== null ? autolinker.link(feature.properties['Luas (km2)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_JakartaBarat_1_0() {
@@ -150,7 +158,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(163,255,165,0.17254901960784313)',
@@ -173,14 +181,14 @@
         map.addLayer(layer_JakartaBarat_1);
         function pop_JakartaPusat_2(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -201,7 +209,7 @@
                         <td>' + (feature.properties['Luas (km2)'] !== null ? autolinker.link(feature.properties['Luas (km2)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_JakartaPusat_2_0() {
@@ -212,7 +220,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(203,255,151,0.17647058823529413)',
@@ -235,14 +243,14 @@
         map.addLayer(layer_JakartaPusat_2);
         function pop_JakartaSelatan_3(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -263,7 +271,7 @@
                         <td>' + (feature.properties['Luas (km2)'] !== null ? autolinker.link(feature.properties['Luas (km2)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_JakartaSelatan_3_0() {
@@ -274,7 +282,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(233,255,181,0.16470588235294117)',
@@ -297,14 +305,14 @@
         map.addLayer(layer_JakartaSelatan_3);
         function pop_JakartaTimur_4(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -325,7 +333,7 @@
                         <td>' + (feature.properties['Luas (km2)'] !== null ? autolinker.link(feature.properties['Luas (km2)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_JakartaTimur_4_0() {
@@ -336,7 +344,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(253,255,137,0.1568627450980392)',
@@ -359,14 +367,14 @@
         map.addLayer(layer_JakartaTimur_4);
         function pop_JakartaUtara_5(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -387,7 +395,7 @@
                         <td>' + (feature.properties['Luas (km2)'] !== null ? autolinker.link(feature.properties['Luas (km2)'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_JakartaUtara_5_0() {
@@ -398,7 +406,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(255,254,185,0.1607843137254902)',
@@ -421,14 +429,14 @@
         map.addLayer(layer_JakartaUtara_5);
         function pop_KepSeribu_6(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -445,7 +453,7 @@
                         <td>' + (feature.properties['Kota'] !== null ? autolinker.link(feature.properties['Kota'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_KepSeribu_6_0() {
@@ -456,7 +464,7 @@
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 1.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(136,193,70,0.1450980392156863)',
@@ -479,14 +487,14 @@
         map.addLayer(layer_KepSeribu_6);
         function pop_JalanJakartaBarat_7(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -523,14 +531,14 @@
         bounds_group.addLayer(layer_JalanJakartaBarat_7);
         function pop_JalanJakartaPusat_8(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -567,14 +575,14 @@
         bounds_group.addLayer(layer_JalanJakartaPusat_8);
         function pop_JalanJakartaSelatan_9(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -611,14 +619,14 @@
         bounds_group.addLayer(layer_JalanJakartaSelatan_9);
         function pop_JalanJakartaTimur_10(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -655,14 +663,14 @@
         bounds_group.addLayer(layer_JalanJakartaTimur_10);
         function pop_JalanJakartaUtara_11(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -699,14 +707,14 @@
         bounds_group.addLayer(layer_JalanJakartaUtara_11);
         function pop_JalanKepSeribu_12(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -743,14 +751,14 @@
         bounds_group.addLayer(layer_JalanKepSeribu_12);
         function pop_JalanTol_13(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -788,14 +796,14 @@
         map.addLayer(layer_JalanTol_13);
         function pop_KRLLine_14(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -807,7 +815,7 @@
                         <td colspan="2"><strong>Line</strong><br />' + (feature.properties['Line'] !== null ? autolinker.link(feature.properties['Line'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_KRLLine_14_0() {
@@ -839,14 +847,14 @@
         map.addLayer(layer_KRLLine_14);
         function pop_RPTRA_15(feature, layer) {
             layer.on({
-                mouseout: function(e) {
+                mouseout: function (e) {
                     for (i in e.target._eventParents) {
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                     if (typeof layer.closePopup == 'function') {
                         layer.closePopup();
                     } else {
-                        layer.eachLayer(function(feature){
+                        layer.eachLayer(function (feature) {
                             feature.closePopup()
                         });
                     }
@@ -864,7 +872,7 @@
                         <td colspan="2"><strong>Rating</strong><br />' + (feature.properties['Rating'] !== null ? autolinker.link(feature.properties['Rating'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2"><strong>ReviewTota</strong><br />' + (feature.properties['ReviewTota'] !== null ? autolinker.link(feature.properties['ReviewTota'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><strong>Total Ulasan</strong><br />' + (feature.properties['Total Ulasan'] !== null ? autolinker.link(feature.properties['Total Ulasan'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2"><strong>Alamat</strong><br />' + (feature.properties['Alamat'] !== null ? autolinker.link(feature.properties['Alamat'].toLocaleString()) : '') + '</td>\
@@ -876,7 +884,7 @@
                         <td colspan="2"><strong>longitude</strong><br />' + (feature.properties['longitude'] !== null ? autolinker.link(feature.properties['longitude'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
 
         function style_RPTRA_15_0() {
@@ -913,8 +921,10 @@
                 return L.circleMarker(latlng, style_RPTRA_15_0(feature));
             },
         });
-        var cluster_RPTRA_15 = new L.MarkerClusterGroup({showCoverageOnHover: false,
-            spiderfyDistanceMultiplier: 2});
+        var cluster_RPTRA_15 = new L.MarkerClusterGroup({
+            showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2
+        });
         cluster_RPTRA_15.addLayer(layer_RPTRA_15);
 
         bounds_group.addLayer(layer_RPTRA_15);
@@ -926,258 +936,260 @@
             title: 'Testing'
         }).addTo(map);
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .className += ' fa fa-search';
+            .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .title += 'Search for a place';
+            .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/RPTRA_15.png" /> RPTRA': cluster_RPTRA_15,'<img src="legend/KRLLine_14.png" /> KRL Line': layer_KRLLine_14,'<img src="legend/JalanTol_13.png" /> Jalan Tol': layer_JalanTol_13,'<img src="legend/JalanKepSeribu_12.png" /> Jalan Kep. Seribu': layer_JalanKepSeribu_12,'<img src="legend/JalanJakartaUtara_11.png" /> Jalan Jakarta Utara': layer_JalanJakartaUtara_11,'<img src="legend/JalanJakartaTimur_10.png" /> Jalan Jakarta Timur': layer_JalanJakartaTimur_10,'<img src="legend/JalanJakartaSelatan_9.png" /> Jalan Jakarta Selatan': layer_JalanJakartaSelatan_9,'<img src="legend/JalanJakartaPusat_8.png" /> Jalan Jakarta Pusat': layer_JalanJakartaPusat_8,'<img src="legend/JalanJakartaBarat_7.png" /> Jalan Jakarta Barat': layer_JalanJakartaBarat_7,'<img src="legend/KepSeribu_6.png" /> Kep.  Seribu': layer_KepSeribu_6,'<img src="legend/JakartaUtara_5.png" /> Jakarta Utara': layer_JakartaUtara_5,'<img src="legend/JakartaTimur_4.png" /> Jakarta Timur': layer_JakartaTimur_4,'<img src="legend/JakartaSelatan_3.png" /> Jakarta Selatan': layer_JakartaSelatan_3,'<img src="legend/JakartaPusat_2.png" /> Jakarta Pusat': layer_JakartaPusat_2,'<img src="legend/JakartaBarat_1.png" /> Jakarta Barat': layer_JakartaBarat_1,"Transport Maps": layer_TransportMaps_0,}).addTo(map);
+        L.control.layers(baseMaps, { '<img src="legend/RPTRA_15.png" /> RPTRA': cluster_RPTRA_15, '<img src="legend/KRLLine_14.png" /> KRL Line': layer_KRLLine_14, '<img src="legend/JalanTol_13.png" /> Jalan Tol': layer_JalanTol_13, '<img src="legend/JalanKepSeribu_12.png" /> Jalan Kep. Seribu': layer_JalanKepSeribu_12, '<img src="legend/JalanJakartaUtara_11.png" /> Jalan Jakarta Utara': layer_JalanJakartaUtara_11, '<img src="legend/JalanJakartaTimur_10.png" /> Jalan Jakarta Timur': layer_JalanJakartaTimur_10, '<img src="legend/JalanJakartaSelatan_9.png" /> Jalan Jakarta Selatan': layer_JalanJakartaSelatan_9, '<img src="legend/JalanJakartaPusat_8.png" /> Jalan Jakarta Pusat': layer_JalanJakartaPusat_8, '<img src="legend/JalanJakartaBarat_7.png" /> Jalan Jakarta Barat': layer_JalanJakartaBarat_7, '<img src="legend/KepSeribu_6.png" /> Kep.  Seribu': layer_KepSeribu_6, '<img src="legend/JakartaUtara_5.png" /> Jakarta Utara': layer_JakartaUtara_5, '<img src="legend/JakartaTimur_4.png" /> Jakarta Timur': layer_JakartaTimur_4, '<img src="legend/JakartaSelatan_3.png" /> Jakarta Selatan': layer_JakartaSelatan_3, '<img src="legend/JakartaPusat_2.png" /> Jakarta Pusat': layer_JakartaPusat_2, '<img src="legend/JakartaBarat_1.png" /> Jakarta Barat': layer_JakartaBarat_1, "Transport Maps": layer_TransportMaps_0, }).addTo(map);
         setBounds();
         map.addControl(new L.Control.Search({
             layer: cluster_RPTRA_15,
             initial: false,
             hideMarkerOnCollapse: true,
-            propertyName: 'Nama'}));
+            propertyName: 'Nama'
+        }));
         document.getElementsByClassName('search-button')[0].className +=
-         ' fa fa-binoculars';
+            ' fa fa-binoculars';
         var mapDiv = document.getElementById('map');
         var row = document.createElement('div');
-        row.className="row";
-        row.id="all";
+        row.className = "row";
+        row.id = "all";
         row.style.height = "100%";
         var col1 = document.createElement('div');
-        col1.className="col9";
+        col1.className = "col9";
         col1.id = "mapWindow";
         col1.style.height = "99%";
         col1.style.width = "80%";
         col1.style.display = "inline-block";
         var col2 = document.createElement('div');
-        col2.className="col3";
+        col2.className = "col3";
         col2.id = "menu";
         col2.style.display = "inline-block";
         mapDiv.parentNode.insertBefore(row, mapDiv);
         document.getElementById("all").appendChild(col1);
         document.getElementById("all").appendChild(col2);
         col1.appendChild(mapDiv)
-        var Filters = {"Kecamatan": "str"};
+        var Filters = { "Kecamatan": "str" };
         function filterFunc() {
-          map.eachLayer(function(lyr){
-          if ("options" in lyr && "dataVar" in lyr["options"]){
-            features = this[lyr["options"]["dataVar"]].features.slice(0);
-            try{
-              for (key in Filters){
-                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
-                if (Filters[key] == "str" || Filters[key] == "bool"){
-                  var selection = [];
-                  var options = document.getElementById("sel_" + keyS).options
-                  for (var i=0; i < options.length; i++) {
-                    if (options[i].selected) selection.push(options[i].value);
-                  }
-                    try{
-                      if (key in features[0].properties){
-                        for (i = features.length - 1;
-                          i >= 0; --i){
-                          if (selection.indexOf(
-                          features[i].properties[key])<0
-                          && selection.length>0) {
-                          features.splice(i,1);
-                          }
+            map.eachLayer(function (lyr) {
+                if ("options" in lyr && "dataVar" in lyr["options"]) {
+                    features = this[lyr["options"]["dataVar"]].features.slice(0);
+                    try {
+                        for (key in Filters) {
+                            keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                            if (Filters[key] == "str" || Filters[key] == "bool") {
+                                var selection = [];
+                                var options = document.getElementById("sel_" + keyS).options
+                                for (var i = 0; i < options.length; i++) {
+                                    if (options[i].selected) selection.push(options[i].value);
+                                }
+                                try {
+                                    if (key in features[0].properties) {
+                                        for (i = features.length - 1;
+                                            i >= 0; --i) {
+                                            if (selection.indexOf(
+                                                features[i].properties[key]) < 0
+                                                && selection.length > 0) {
+                                                features.splice(i, 1);
+                                            }
+                                        }
+                                    }
+                                } catch (err) {
+                                }
+                            }
+                            if (Filters[key] == "int") {
+                                sliderVals = document.getElementById(
+                                    "div_" + keyS).noUiSlider.get();
+                                try {
+                                    if (key in features[0].properties) {
+                                        for (i = features.length - 1; i >= 0; --i) {
+                                            if (parseInt(features[i].properties[key])
+                                                < sliderVals[0]
+                                                || parseInt(features[i].properties[key])
+                                                > sliderVals[1]) {
+                                                features.splice(i, 1);
+                                            }
+                                        }
+                                    }
+                                } catch (err) {
+                                }
+                            }
+                            if (Filters[key] == "real") {
+                                sliderVals = document.getElementById(
+                                    "div_" + keyS).noUiSlider.get();
+                                try {
+                                    if (key in features[0].properties) {
+                                        for (i = features.length - 1; i >= 0; --i) {
+                                            if (features[i].properties[key]
+                                                < sliderVals[0]
+                                                || features[i].properties[key]
+                                                > sliderVals[1]) {
+                                                features.splice(i, 1);
+                                            }
+                                        }
+                                    }
+                                } catch (err) {
+                                }
+                            }
+                            if (Filters[key] == "date"
+                                || Filters[key] == "datetime"
+                                || Filters[key] == "time") {
+                                try {
+                                    if (key in features[0].properties) {
+                                        HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                                        startdate = document.getElementById("dat_" +
+                                            HTMLkey + "_date1").value.replace(" ", "T");
+                                        enddate = document.getElementById("dat_" +
+                                            HTMLkey + "_date2").value.replace(" ", "T");
+                                        for (i = features.length - 1; i >= 0; --i) {
+                                            if (features[i].properties[key] < startdate
+                                                || features[i].properties[key] > enddate) {
+                                                features.splice(i, 1);
+                                            }
+                                        }
+                                    }
+                                } catch (err) {
+                                }
+                            }
                         }
-                      }
-                    } catch(err){
-                  }
+                    } catch (err) {
+                    }
+                    this[lyr["options"]["layerName"]].clearLayers();
+                    this[lyr["options"]["layerName"]].addData(features);
                 }
-                if (Filters[key] == "int"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (parseInt(features[i].properties[key])
-                          < sliderVals[0]
-                          || parseInt(features[i].properties[key])
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "real"){
-                  sliderVals =  document.getElementById(
-                    "div_" + keyS).noUiSlider.get();
-                  try{
-                    if (key in features[0].properties){
-                    for (i = features.length - 1; i >= 0; --i){
-                      if (features[i].properties[key]
-                          < sliderVals[0]
-                          || features[i].properties[key]
-                          > sliderVals[1]){
-                            features.splice(i,1);
-                          }
-                        }
-                      }
-                    } catch(err){
-                    }
-                  }
-                if (Filters[key] == "date"
-                  || Filters[key] == "datetime"
-                  || Filters[key] == "time"){
-                  try{
-                    if (key in features[0].properties){
-                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
-                      startdate = document.getElementById("dat_" +
-                        HTMLkey + "_date1").value.replace(" ", "T");
-                      enddate = document.getElementById("dat_" +
-                        HTMLkey + "_date2").value.replace(" ", "T");
-                      for (i = features.length - 1; i >= 0; --i){
-                        if (features[i].properties[key] < startdate
-                          || features[i].properties[key] > enddate){
-                          features.splice(i,1);
-                        }
-                      }
-                    }
-                  } catch(err){
-                  }
-                }
-              }
-            } catch(err){
-            }
-          this[lyr["options"]["layerName"]].clearLayers();
-          this[lyr["options"]["layerName"]].addData(features);
-          }
-          })
+            })
         }
-            document.getElementById("menu").appendChild(
-                document.createElement("div"));
-            var div_Kecamatan = document.createElement('div');
-            div_Kecamatan.id = "div_Kecamatan";
-            div_Kecamatan.className= "filterselect";
-            document.getElementById("menu").appendChild(div_Kecamatan);
-            sel_Kecamatan = document.createElement('select');
-            sel_Kecamatan.multiple = true;
-            sel_Kecamatan.size = 10;
-            sel_Kecamatan.id = "sel_Kecamatan";
-            var Kecamatan_options_str = "<option value='' unselected></option>";
-            sel_Kecamatan.onchange = function(){filterFunc()};
-            Kecamatan_options_str  += '<option value="NULL">NULL</option>';
-            Kecamatan_options_str  += '<option value="-">-</option>';
-            Kecamatan_options_str  += '<option value="0">0</option>';
-            Kecamatan_options_str  += '<option value="Cakung">Cakung</option>';
-            Kecamatan_options_str  += '<option value="Cempaka Putih">Cempaka Putih</option>';
-            Kecamatan_options_str  += '<option value="Cengkareng">Cengkareng</option>';
-            Kecamatan_options_str  += '<option value="Cilandak">Cilandak</option>';
-            Kecamatan_options_str  += '<option value="Cilincing">Cilincing</option>';
-            Kecamatan_options_str  += '<option value="Cipayung">Cipayung</option>';
-            Kecamatan_options_str  += '<option value="Ciracas">Ciracas</option>';
-            Kecamatan_options_str  += '<option value="Duren Sawit">Duren Sawit</option>';
-            Kecamatan_options_str  += '<option value="Gambir">Gambir</option>';
-            Kecamatan_options_str  += '<option value="Grogol Petamburan">Grogol Petamburan</option>';
-            Kecamatan_options_str  += '<option value="Jagakarsa">Jagakarsa</option>';
-            Kecamatan_options_str  += '<option value="Jatinegara">Jatinegara</option>';
-            Kecamatan_options_str  += '<option value="Johar Baru">Johar Baru</option>';
-            Kecamatan_options_str  += '<option value="Kalideres">Kalideres</option>';
-            Kecamatan_options_str  += '<option value="Kebayoran Baru">Kebayoran Baru</option>';
-            Kecamatan_options_str  += '<option value="Kebayoran Lama">Kebayoran Lama</option>';
-            Kecamatan_options_str  += '<option value="Kebon Jeruk">Kebon Jeruk</option>';
-            Kecamatan_options_str  += '<option value="Kelapa Gading">Kelapa Gading</option>';
-            Kecamatan_options_str  += '<option value="Kemayoran">Kemayoran</option>';
-            Kecamatan_options_str  += '<option value="Kembangan">Kembangan</option>';
-            Kecamatan_options_str  += '<option value="Koja">Koja</option>';
-            Kecamatan_options_str  += '<option value="Kramatjati">Kramatjati</option>';
-            Kecamatan_options_str  += '<option value="Laguna">Laguna</option>';
-            Kecamatan_options_str  += '<option value="Makasar">Makasar</option>';
-            Kecamatan_options_str  += '<option value="Mampang Prapatan">Mampang Prapatan</option>';
-            Kecamatan_options_str  += '<option value="Matraman">Matraman</option>';
-            Kecamatan_options_str  += '<option value="Menteng">Menteng</option>';
-            Kecamatan_options_str  += '<option value="Pademangan">Pademangan</option>';
-            Kecamatan_options_str  += '<option value="Palmerah">Palmerah</option>';
-            Kecamatan_options_str  += '<option value="Pancoran">Pancoran</option>';
-            Kecamatan_options_str  += '<option value="Pasar Minggu">Pasar Minggu</option>';
-            Kecamatan_options_str  += '<option value="Pasar Rebo">Pasar Rebo</option>';
-            Kecamatan_options_str  += '<option value="Penjaringan">Penjaringan</option>';
-            Kecamatan_options_str  += '<option value="Pesanggrahan">Pesanggrahan</option>';
-            Kecamatan_options_str  += '<option value="Pulau Ayer Kecil">Pulau Ayer Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Bidadari">Pulau Bidadari</option>';
-            Kecamatan_options_str  += '<option value="Pulau Bokor">Pulau Bokor</option>';
-            Kecamatan_options_str  += '<option value="Pulau Bulat">Pulau Bulat</option>';
-            Kecamatan_options_str  += '<option value="Pulau Burung">Pulau Burung</option>';
-            Kecamatan_options_str  += '<option value="Pulau Cipir">Pulau Cipir</option>';
-            Kecamatan_options_str  += '<option value="Pulau Dolphin">Pulau Dolphin</option>';
-            Kecamatan_options_str  += '<option value="Pulau Dua Timur">Pulau Dua Timur</option>';
-            Kecamatan_options_str  += '<option value="Pulau Gotrah">Pulau Gotrah</option>';
-            Kecamatan_options_str  += '<option value="Pulau Harapan 1">Pulau Harapan 1</option>';
-            Kecamatan_options_str  += '<option value="Pulau Harapan 3">Pulau Harapan 3</option>';
-            Kecamatan_options_str  += '<option value="Pulau Harapan 4">Pulau Harapan 4</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kaliage">Pulau Kaliage</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kaliage Kecil">Pulau Kaliage Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kapal/Onrust">Pulau Kapal/Onrust</option>';
-            Kecamatan_options_str  += '<option value="Pulau Karang Beras">Pulau Karang Beras</option>';
-            Kecamatan_options_str  += '<option value="Pulau Karya">Pulau Karya</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kelapa">Pulau Kelapa</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kelapa Dua">Pulau Kelapa Dua</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kelor Besar">Pulau Kelor Besar</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kelor Timur">Pulau Kelor Timur</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kelor Timur 1">Pulau Kelor Timur 1</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kongsi Barat">Pulau Kongsi Barat</option>';
-            Kecamatan_options_str  += '<option value="Pulau Kongsi Timur">Pulau Kongsi Timur</option>';
-            Kecamatan_options_str  += '<option value="Pulau Laki">Pulau Laki</option>';
-            Kecamatan_options_str  += '<option value="Pulau Lancang">Pulau Lancang</option>';
-            Kecamatan_options_str  += '<option value="Pulau Lancang Kecil">Pulau Lancang Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Macan">Pulau Macan</option>';
-            Kecamatan_options_str  += '<option value="Pulau Nyamuk Kecil">Pulau Nyamuk Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Opak Besar">Pulau Opak Besar</option>';
-            Kecamatan_options_str  += '<option value="Pulau Opak Besar Timur">Pulau Opak Besar Timur</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pabelokan">Pulau Pabelokan</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pandan Gusung">Pulau Pandan Gusung</option>';
-            Kecamatan_options_str  += '<option value="Pulau Panggang">Pulau Panggang</option>';
-            Kecamatan_options_str  += '<option value="Pulau Panjang">Pulau Panjang</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pantara">Pulau Pantara</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pari">Pulau Pari</option>';
-            Kecamatan_options_str  += '<option value="Pulau Patra Bira">Pulau Patra Bira</option>';
-            Kecamatan_options_str  += '<option value="Pulau Payung">Pulau Payung</option>';
-            Kecamatan_options_str  += '<option value="Pulau Payung Kecil">Pulau Payung Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Peniki">Pulau Peniki</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pramuka">Pulau Pramuka</option>';
-            Kecamatan_options_str  += '<option value="Pulau Pramuka 1">Pulau Pramuka 1</option>';
-            Kecamatan_options_str  += '<option value="Pulau Putri">Pulau Putri</option>';
-            Kecamatan_options_str  += '<option value="Pulau Rambut">Pulau Rambut</option>';
-            Kecamatan_options_str  += '<option value="Pulau Semak Daun">Pulau Semak Daun</option>';
-            Kecamatan_options_str  += '<option value="Pulau Sepa Kecil">Pulau Sepa Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Seribu">Pulau Seribu</option>';
-            Kecamatan_options_str  += '<option value="Pulau Tengah">Pulau Tengah</option>';
-            Kecamatan_options_str  += '<option value="Pulau Tengah 2">Pulau Tengah 2</option>';
-            Kecamatan_options_str  += '<option value="Pulau Tidung Barat">Pulau Tidung Barat</option>';
-            Kecamatan_options_str  += '<option value="Pulau Tidung Kecil">Pulau Tidung Kecil</option>';
-            Kecamatan_options_str  += '<option value="Pulau Tikus">Pulau Tikus</option>';
-            Kecamatan_options_str  += '<option value="Pulau Untung Jawa">Pulau Untung Jawa</option>';
-            Kecamatan_options_str  += '<option value="Pulau tongkeng">Pulau tongkeng</option>';
-            Kecamatan_options_str  += '<option value="Pulo Gadung">Pulo Gadung</option>';
-            Kecamatan_options_str  += '<option value="Sawah Besar">Sawah Besar</option>';
-            Kecamatan_options_str  += '<option value="Senen">Senen</option>';
-            Kecamatan_options_str  += '<option value="Setia Budi">Setia Budi</option>';
-            Kecamatan_options_str  += '<option value="Taman Sari">Taman Sari</option>';
-            Kecamatan_options_str  += '<option value="Tambora">Tambora</option>';
-            Kecamatan_options_str  += '<option value="Tanah Abang">Tanah Abang</option>';
-            Kecamatan_options_str  += '<option value="Tanjung Priok">Tanjung Priok</option>';
-            Kecamatan_options_str  += '<option value="Tebet">Tebet</option>';
-            sel_Kecamatan.innerHTML = Kecamatan_options_str;
-            div_Kecamatan.appendChild(sel_Kecamatan);
-            var lab_Kecamatan = document.createElement('div');
-            lab_Kecamatan.innerHTML = 'Kecamatan';
-            lab_Kecamatan.className = 'filterlabel';
-            div_Kecamatan.appendChild(lab_Kecamatan);
-            var reset_Kecamatan = document.createElement('div');
-            reset_Kecamatan.innerHTML = 'clear filter';
-            reset_Kecamatan.className = 'filterlabel';
-            reset_Kecamatan.onclick = function() {
-                var options = document.getElementById("sel_Kecamatan").options;
-                for (var i=0; i < options.length; i++) {
-                    options[i].selected = false;
-                }
-                filterFunc();
-            };
-            div_Kecamatan.appendChild(reset_Kecamatan);
-        </script>
-    </body>
+        document.getElementById("menu").appendChild(
+            document.createElement("div"));
+        var div_Kecamatan = document.createElement('div');
+        div_Kecamatan.id = "div_Kecamatan";
+        div_Kecamatan.className = "filterselect";
+        document.getElementById("menu").appendChild(div_Kecamatan);
+        sel_Kecamatan = document.createElement('select');
+        sel_Kecamatan.multiple = true;
+        sel_Kecamatan.size = 10;
+        sel_Kecamatan.id = "sel_Kecamatan";
+        var Kecamatan_options_str = "<option value='' unselected></option>";
+        sel_Kecamatan.onchange = function () { filterFunc() };
+        Kecamatan_options_str += '<option value="NULL">NULL</option>';
+        Kecamatan_options_str += '<option value="-">-</option>';
+        Kecamatan_options_str += '<option value="0">0</option>';
+        Kecamatan_options_str += '<option value="Cakung">Cakung</option>';
+        Kecamatan_options_str += '<option value="Cempaka Putih">Cempaka Putih</option>';
+        Kecamatan_options_str += '<option value="Cengkareng">Cengkareng</option>';
+        Kecamatan_options_str += '<option value="Cilandak">Cilandak</option>';
+        Kecamatan_options_str += '<option value="Cilincing">Cilincing</option>';
+        Kecamatan_options_str += '<option value="Cipayung">Cipayung</option>';
+        Kecamatan_options_str += '<option value="Ciracas">Ciracas</option>';
+        Kecamatan_options_str += '<option value="Duren Sawit">Duren Sawit</option>';
+        Kecamatan_options_str += '<option value="Gambir">Gambir</option>';
+        Kecamatan_options_str += '<option value="Grogol Petamburan">Grogol Petamburan</option>';
+        Kecamatan_options_str += '<option value="Jagakarsa">Jagakarsa</option>';
+        Kecamatan_options_str += '<option value="Jatinegara">Jatinegara</option>';
+        Kecamatan_options_str += '<option value="Johar Baru">Johar Baru</option>';
+        Kecamatan_options_str += '<option value="Kalideres">Kalideres</option>';
+        Kecamatan_options_str += '<option value="Kebayoran Baru">Kebayoran Baru</option>';
+        Kecamatan_options_str += '<option value="Kebayoran Lama">Kebayoran Lama</option>';
+        Kecamatan_options_str += '<option value="Kebon Jeruk">Kebon Jeruk</option>';
+        Kecamatan_options_str += '<option value="Kelapa Gading">Kelapa Gading</option>';
+        Kecamatan_options_str += '<option value="Kemayoran">Kemayoran</option>';
+        Kecamatan_options_str += '<option value="Kembangan">Kembangan</option>';
+        Kecamatan_options_str += '<option value="Koja">Koja</option>';
+        Kecamatan_options_str += '<option value="Kramatjati">Kramatjati</option>';
+        Kecamatan_options_str += '<option value="Laguna">Laguna</option>';
+        Kecamatan_options_str += '<option value="Makasar">Makasar</option>';
+        Kecamatan_options_str += '<option value="Mampang Prapatan">Mampang Prapatan</option>';
+        Kecamatan_options_str += '<option value="Matraman">Matraman</option>';
+        Kecamatan_options_str += '<option value="Menteng">Menteng</option>';
+        Kecamatan_options_str += '<option value="Pademangan">Pademangan</option>';
+        Kecamatan_options_str += '<option value="Palmerah">Palmerah</option>';
+        Kecamatan_options_str += '<option value="Pancoran">Pancoran</option>';
+        Kecamatan_options_str += '<option value="Pasar Minggu">Pasar Minggu</option>';
+        Kecamatan_options_str += '<option value="Pasar Rebo">Pasar Rebo</option>';
+        Kecamatan_options_str += '<option value="Penjaringan">Penjaringan</option>';
+        Kecamatan_options_str += '<option value="Pesanggrahan">Pesanggrahan</option>';
+        Kecamatan_options_str += '<option value="Pulau Ayer Kecil">Pulau Ayer Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Bidadari">Pulau Bidadari</option>';
+        Kecamatan_options_str += '<option value="Pulau Bokor">Pulau Bokor</option>';
+        Kecamatan_options_str += '<option value="Pulau Bulat">Pulau Bulat</option>';
+        Kecamatan_options_str += '<option value="Pulau Burung">Pulau Burung</option>';
+        Kecamatan_options_str += '<option value="Pulau Cipir">Pulau Cipir</option>';
+        Kecamatan_options_str += '<option value="Pulau Dolphin">Pulau Dolphin</option>';
+        Kecamatan_options_str += '<option value="Pulau Dua Timur">Pulau Dua Timur</option>';
+        Kecamatan_options_str += '<option value="Pulau Gotrah">Pulau Gotrah</option>';
+        Kecamatan_options_str += '<option value="Pulau Harapan 1">Pulau Harapan 1</option>';
+        Kecamatan_options_str += '<option value="Pulau Harapan 3">Pulau Harapan 3</option>';
+        Kecamatan_options_str += '<option value="Pulau Harapan 4">Pulau Harapan 4</option>';
+        Kecamatan_options_str += '<option value="Pulau Kaliage">Pulau Kaliage</option>';
+        Kecamatan_options_str += '<option value="Pulau Kaliage Kecil">Pulau Kaliage Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Kapal/Onrust">Pulau Kapal/Onrust</option>';
+        Kecamatan_options_str += '<option value="Pulau Karang Beras">Pulau Karang Beras</option>';
+        Kecamatan_options_str += '<option value="Pulau Karya">Pulau Karya</option>';
+        Kecamatan_options_str += '<option value="Pulau Kelapa">Pulau Kelapa</option>';
+        Kecamatan_options_str += '<option value="Pulau Kelapa Dua">Pulau Kelapa Dua</option>';
+        Kecamatan_options_str += '<option value="Pulau Kelor Besar">Pulau Kelor Besar</option>';
+        Kecamatan_options_str += '<option value="Pulau Kelor Timur">Pulau Kelor Timur</option>';
+        Kecamatan_options_str += '<option value="Pulau Kelor Timur 1">Pulau Kelor Timur 1</option>';
+        Kecamatan_options_str += '<option value="Pulau Kongsi Barat">Pulau Kongsi Barat</option>';
+        Kecamatan_options_str += '<option value="Pulau Kongsi Timur">Pulau Kongsi Timur</option>';
+        Kecamatan_options_str += '<option value="Pulau Laki">Pulau Laki</option>';
+        Kecamatan_options_str += '<option value="Pulau Lancang">Pulau Lancang</option>';
+        Kecamatan_options_str += '<option value="Pulau Lancang Kecil">Pulau Lancang Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Macan">Pulau Macan</option>';
+        Kecamatan_options_str += '<option value="Pulau Nyamuk Kecil">Pulau Nyamuk Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Opak Besar">Pulau Opak Besar</option>';
+        Kecamatan_options_str += '<option value="Pulau Opak Besar Timur">Pulau Opak Besar Timur</option>';
+        Kecamatan_options_str += '<option value="Pulau Pabelokan">Pulau Pabelokan</option>';
+        Kecamatan_options_str += '<option value="Pulau Pandan Gusung">Pulau Pandan Gusung</option>';
+        Kecamatan_options_str += '<option value="Pulau Panggang">Pulau Panggang</option>';
+        Kecamatan_options_str += '<option value="Pulau Panjang">Pulau Panjang</option>';
+        Kecamatan_options_str += '<option value="Pulau Pantara">Pulau Pantara</option>';
+        Kecamatan_options_str += '<option value="Pulau Pari">Pulau Pari</option>';
+        Kecamatan_options_str += '<option value="Pulau Patra Bira">Pulau Patra Bira</option>';
+        Kecamatan_options_str += '<option value="Pulau Payung">Pulau Payung</option>';
+        Kecamatan_options_str += '<option value="Pulau Payung Kecil">Pulau Payung Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Peniki">Pulau Peniki</option>';
+        Kecamatan_options_str += '<option value="Pulau Pramuka">Pulau Pramuka</option>';
+        Kecamatan_options_str += '<option value="Pulau Pramuka 1">Pulau Pramuka 1</option>';
+        Kecamatan_options_str += '<option value="Pulau Putri">Pulau Putri</option>';
+        Kecamatan_options_str += '<option value="Pulau Rambut">Pulau Rambut</option>';
+        Kecamatan_options_str += '<option value="Pulau Semak Daun">Pulau Semak Daun</option>';
+        Kecamatan_options_str += '<option value="Pulau Sepa Kecil">Pulau Sepa Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Seribu">Pulau Seribu</option>';
+        Kecamatan_options_str += '<option value="Pulau Tengah">Pulau Tengah</option>';
+        Kecamatan_options_str += '<option value="Pulau Tengah 2">Pulau Tengah 2</option>';
+        Kecamatan_options_str += '<option value="Pulau Tidung Barat">Pulau Tidung Barat</option>';
+        Kecamatan_options_str += '<option value="Pulau Tidung Kecil">Pulau Tidung Kecil</option>';
+        Kecamatan_options_str += '<option value="Pulau Tikus">Pulau Tikus</option>';
+        Kecamatan_options_str += '<option value="Pulau Untung Jawa">Pulau Untung Jawa</option>';
+        Kecamatan_options_str += '<option value="Pulau tongkeng">Pulau tongkeng</option>';
+        Kecamatan_options_str += '<option value="Pulo Gadung">Pulo Gadung</option>';
+        Kecamatan_options_str += '<option value="Sawah Besar">Sawah Besar</option>';
+        Kecamatan_options_str += '<option value="Senen">Senen</option>';
+        Kecamatan_options_str += '<option value="Setia Budi">Setia Budi</option>';
+        Kecamatan_options_str += '<option value="Taman Sari">Taman Sari</option>';
+        Kecamatan_options_str += '<option value="Tambora">Tambora</option>';
+        Kecamatan_options_str += '<option value="Tanah Abang">Tanah Abang</option>';
+        Kecamatan_options_str += '<option value="Tanjung Priok">Tanjung Priok</option>';
+        Kecamatan_options_str += '<option value="Tebet">Tebet</option>';
+        sel_Kecamatan.innerHTML = Kecamatan_options_str;
+        div_Kecamatan.appendChild(sel_Kecamatan);
+        var lab_Kecamatan = document.createElement('div');
+        lab_Kecamatan.innerHTML = 'Kecamatan';
+        lab_Kecamatan.className = 'filterlabel';
+        div_Kecamatan.appendChild(lab_Kecamatan);
+        var reset_Kecamatan = document.createElement('div');
+        reset_Kecamatan.innerHTML = 'clear filter';
+        reset_Kecamatan.className = 'filterlabel';
+        reset_Kecamatan.onclick = function () {
+            var options = document.getElementById("sel_Kecamatan").options;
+            for (var i = 0; i < options.length; i++) {
+                options[i].selected = false;
+            }
+            filterFunc();
+        };
+        div_Kecamatan.appendChild(reset_Kecamatan);
+    </script>
+</body>
+
 </html>
