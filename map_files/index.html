@@ -72,7 +72,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-6.394187262641327,106.73184635527011],[-6.051874027863577,107.1918618884927]]);
+        }).fitBounds([[-6.388453312859846,106.6765900681515],[-6.068935129145121,107.10597261233247]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -141,14 +141,14 @@
             return {
                 pane: 'pane_JakartaBarat_1',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(129,135,134,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 3.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,0,0.19215686274509805)',
+                fillColor: 'rgba(255,255,0,0.792156862745098)',
                 interactive: false,
             }
         }
@@ -203,14 +203,14 @@
             return {
                 pane: 'pane_JakartaPusat_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(243,255,253,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 3.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,165,0,0.19215686274509805)',
+                fillColor: 'rgba(255,165,0,0.792156862745098)',
                 interactive: false,
             }
         }
@@ -265,14 +265,14 @@
             return {
                 pane: 'pane_JakartaSelatan_3',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(243,255,253,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 3.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(128,128,128,0.18823529411764706)',
+                fillColor: 'rgba(128,128,128,0.792156862745098)',
                 interactive: false,
             }
         }
@@ -327,14 +327,14 @@
             return {
                 pane: 'pane_JakartaTimur_4',
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(243,255,253,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 3.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(165,42,42,0.18823529411764706)',
+                fillColor: 'rgba(165,42,42,0.792156862745098)',
                 interactive: false,
             }
         }
@@ -389,14 +389,14 @@
             return {
                 pane: 'pane_JakartaUtara_5',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(243,255,253,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1.0, 
+                weight: 3.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(128,0,128,0.18823529411764706)',
+                fillColor: 'rgba(128,0,128,0.792156862745098)',
                 interactive: false,
             }
         }
@@ -454,7 +454,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(136,193,70,0.1450980392156863)',
+                fillColor: 'rgba(1,255,242,1.0)',
                 interactive: false,
             }
         }
@@ -613,7 +613,7 @@
         function style_RPTRA_9_0() {
             return {
                 pane: 'pane_RPTRA_9',
-                radius: 4.0,
+                radius: 10.0,
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -622,7 +622,7 @@
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(33,104,0,1.0)',
+                fillColor: 'rgba(85,255,0,1.0)',
                 interactive: true,
             }
         }
@@ -695,7 +695,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaSelatan_3'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaSelatan_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -708,7 +708,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaTimur_4'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaTimur_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -721,7 +721,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaUtara_5'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaUtara_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -873,7 +873,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaSelatan_3'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaSelatan_3'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -886,7 +886,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaTimur_4'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaTimur_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -899,7 +899,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #323232; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaUtara_5'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #ffffff; font-size: 10pt; font-weight: bold; font-family: \'Noto Serif Kannada\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_JakartaUtara_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
